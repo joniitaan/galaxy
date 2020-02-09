@@ -1,0 +1,20 @@
+<galaxy-navigation-component></galaxy-navigation-component>
+<h2>Create Game</h2>
+<div [hidden]="ishidden">CreateWorlds successful</div>
+<button (click)="onSubmitCreateWorld()">Create Worlds</button>
+
+<h2>Execute Round</h2>
+<div [hidden]="ishidden2">Execute Round successful</div>
+<button (click)="onSubmitExecuteRound()">Go</button>
+
+<h2>Set Round</h2>
+
+<div *ngIf="gamepref">
+    <div>Runde: <b>"{{ gamepref.round }}"</b></div>
+</div>
+<br/>
+<form [formGroup]="form" (ngSubmit)="onSubmitSetRound()">
+    Runde setzen: <input type="number" formControlName="Round" /><br />
+    <button>Speichern</button>
+</form>
+  
